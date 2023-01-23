@@ -7,18 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130A6E58297E4A4300C3971C /* ActorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A6E57297E4A4300C3971C /* ActorDetails.swift */; };
 		13B7BC0F2977BD7200E5814F /* Media_PlanetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC0E2977BD7200E5814F /* Media_PlanetApp.swift */; };
 		13B7BC112977BD7200E5814F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC102977BD7200E5814F /* ContentView.swift */; };
 		13B7BC132977BD7300E5814F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B7BC122977BD7300E5814F /* Assets.xcassets */; };
 		13B7BC162977BD7300E5814F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B7BC152977BD7300E5814F /* Preview Assets.xcassets */; };
+		13B7BC1D2977BE3B00E5814F /* TMDB_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC1C2977BE3B00E5814F /* TMDB_API.swift */; };
+		13B7BC1F2977BEAD00E5814F /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC1E2977BEAD00E5814F /* Media.swift */; };
+		13B7BC212977BEFE00E5814F /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC202977BEFE00E5814F /* Results.swift */; };
+		13B7BC232977BF3D00E5814F /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC222977BF3D00E5814F /* People.swift */; };
+		13B7BC252977BF6400E5814F /* CastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC242977BF6400E5814F /* CastInfo.swift */; };
+		13B7BC272977BF9D00E5814F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC262977BF9D00E5814F /* Images.swift */; };
+		13B7BC2B2977C02F00E5814F /* Backdrops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC2A2977C02F00E5814F /* Backdrops.swift */; };
+		13B7BC2D2977C04700E5814F /* Logos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC2C2977C04700E5814F /* Logos.swift */; };
+		13B7BC342977C48900E5814F /* MediaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC332977C48900E5814F /* MediaRow.swift */; };
+		13B7BC362977C53400E5814F /* MediaDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC352977C53400E5814F /* MediaDetails.swift */; };
+		13B7BC382977C5DC00E5814F /* CastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC372977C5DC00E5814F /* CastView.swift */; };
+		13B7BC3A2977C66700E5814F /* Backdrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC392977C66700E5814F /* Backdrop.swift */; };
+		13B7BC3C2977C6DF00E5814F /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC3B2977C6DF00E5814F /* MediaItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130A6E57297E4A4300C3971C /* ActorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorDetails.swift; sourceTree = "<group>"; };
 		13B7BC0B2977BD7200E5814F /* Media_Planet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media_Planet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B7BC0E2977BD7200E5814F /* Media_PlanetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media_PlanetApp.swift; sourceTree = "<group>"; };
 		13B7BC102977BD7200E5814F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		13B7BC122977BD7300E5814F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13B7BC152977BD7300E5814F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		13B7BC1C2977BE3B00E5814F /* TMDB_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_API.swift; sourceTree = "<group>"; };
+		13B7BC1E2977BEAD00E5814F /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		13B7BC202977BEFE00E5814F /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		13B7BC222977BF3D00E5814F /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		13B7BC242977BF6400E5814F /* CastInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastInfo.swift; sourceTree = "<group>"; };
+		13B7BC262977BF9D00E5814F /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		13B7BC2A2977C02F00E5814F /* Backdrops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backdrops.swift; sourceTree = "<group>"; };
+		13B7BC2C2977C04700E5814F /* Logos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logos.swift; sourceTree = "<group>"; };
+		13B7BC332977C48900E5814F /* MediaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRow.swift; sourceTree = "<group>"; };
+		13B7BC352977C53400E5814F /* MediaDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetails.swift; sourceTree = "<group>"; };
+		13B7BC372977C5DC00E5814F /* CastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastView.swift; sourceTree = "<group>"; };
+		13B7BC392977C66700E5814F /* Backdrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backdrop.swift; sourceTree = "<group>"; };
+		13B7BC3B2977C6DF00E5814F /* MediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +79,10 @@
 		13B7BC0D2977BD7200E5814F /* Media_Planet */ = {
 			isa = PBXGroup;
 			children = (
+				13B7BC2E2977C30A00E5814F /* Models */,
 				13B7BC0E2977BD7200E5814F /* Media_PlanetApp.swift */,
-				13B7BC102977BD7200E5814F /* ContentView.swift */,
+				13B7BC2F2977C34800E5814F /* Views */,
+				13B7BC302977C37600E5814F /* Controllers */,
 				13B7BC122977BD7300E5814F /* Assets.xcassets */,
 				13B7BC142977BD7300E5814F /* Preview Content */,
 			);
@@ -65,6 +95,42 @@
 				13B7BC152977BD7300E5814F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		13B7BC2E2977C30A00E5814F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13B7BC1E2977BEAD00E5814F /* Media.swift */,
+				13B7BC202977BEFE00E5814F /* Results.swift */,
+				13B7BC222977BF3D00E5814F /* People.swift */,
+				13B7BC262977BF9D00E5814F /* Images.swift */,
+				13B7BC2C2977C04700E5814F /* Logos.swift */,
+				13B7BC2A2977C02F00E5814F /* Backdrops.swift */,
+				13B7BC242977BF6400E5814F /* CastInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		13B7BC2F2977C34800E5814F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				13B7BC102977BD7200E5814F /* ContentView.swift */,
+				13B7BC332977C48900E5814F /* MediaRow.swift */,
+				130A6E57297E4A4300C3971C /* ActorDetails.swift */,
+				13B7BC3B2977C6DF00E5814F /* MediaItem.swift */,
+				13B7BC352977C53400E5814F /* MediaDetails.swift */,
+				13B7BC372977C5DC00E5814F /* CastView.swift */,
+				13B7BC392977C66700E5814F /* Backdrop.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		13B7BC302977C37600E5814F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				13B7BC1C2977BE3B00E5814F /* TMDB_API.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +203,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B7BC342977C48900E5814F /* MediaRow.swift in Sources */,
+				13B7BC3A2977C66700E5814F /* Backdrop.swift in Sources */,
+				13B7BC3C2977C6DF00E5814F /* MediaItem.swift in Sources */,
+				13B7BC2D2977C04700E5814F /* Logos.swift in Sources */,
+				13B7BC252977BF6400E5814F /* CastInfo.swift in Sources */,
 				13B7BC112977BD7200E5814F /* ContentView.swift in Sources */,
 				13B7BC0F2977BD7200E5814F /* Media_PlanetApp.swift in Sources */,
+				13B7BC2B2977C02F00E5814F /* Backdrops.swift in Sources */,
+				13B7BC1F2977BEAD00E5814F /* Media.swift in Sources */,
+				13B7BC1D2977BE3B00E5814F /* TMDB_API.swift in Sources */,
+				13B7BC272977BF9D00E5814F /* Images.swift in Sources */,
+				13B7BC382977C5DC00E5814F /* CastView.swift in Sources */,
+				130A6E58297E4A4300C3971C /* ActorDetails.swift in Sources */,
+				13B7BC232977BF3D00E5814F /* People.swift in Sources */,
+				13B7BC212977BEFE00E5814F /* Results.swift in Sources */,
+				13B7BC362977C53400E5814F /* MediaDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
