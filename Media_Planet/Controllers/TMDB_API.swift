@@ -9,7 +9,8 @@ import Foundation
 
 //retrives first page of movies based on different endpoints
 class TMDB_API: ObservableObject {
-    let apiKey = "be3c28f238dc17af4f5b058fd44ffae2"
+    
+    let apiKey = "***************************"
     func getMovies(endpoint: String, completion: @escaping ([Results]) -> ()) {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)&language=en-US&page=1")
                 
