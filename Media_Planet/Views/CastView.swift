@@ -16,37 +16,43 @@ struct CastView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .top, spacing: 2) {
                 ForEach(people) { cast in
-                    
-                    VStack(alignment: .leading) {
-                        Text(cast.name)
-                            .font(.headline)
-                            .font(.system(size: 8))
-                            .lineLimit(1)
-                            .frame(width: 140, alignment: .leading)
+                    NavigationLink {
+                        ActorDetails(id: cast.id )
+                    } label: {
+                        
+                        VStack(alignment: .leading) {
+                            Text(cast.name)
+                                
+                                .font(.headline)
+                                .font(.system(size: 8))
+                                .lineLimit(1)
+                                .frame(width: 140, alignment: .leading)
                             
                             
-                        Text(cast.character)
-                            .font(.caption)
-                            .frame(width: 140, alignment: .leading)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
-                        
-                        
-                        AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original\(cast.profile_path ?? "")")) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                        } placeholder: {
-                            ProgressView()
+                            Text(cast.character)
+                                .font(.caption)
+                                .frame(width: 140, alignment: .leading)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                            
+                            
+                            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original\(cast.profile_path ?? "")")) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            } placeholder: {
+                                ProgressView()
+                                
+                            }
+                            .frame(width: 120, height: 180)
+                            
+                            .cornerRadius(8)
                             
                         }
-                        .frame(width: 120, height: 180)
-                        
+                        .foregroundColor(.black)
+                        .padding(2)
                         .cornerRadius(8)
-                        
                     }
-                    .padding(2)
-                    .cornerRadius(8)
                 }
                 
             }
@@ -62,8 +68,8 @@ struct CastView: View {
     }
 }
 
-struct CastView_Previews: PreviewProvider {
-    static var previews: some View {
-        CastView(id: "green")
-    }
-}
+//struct CastView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CastView(id: "green")
+//    }
+//}

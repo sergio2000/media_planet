@@ -10,6 +10,8 @@ import SwiftUI
 struct MediaRow: View {
     
     @State var movies: [Results] = []
+    @State var item2: [Backdrops] = []
+    
     var path: String
     
     var body: some View {
@@ -23,7 +25,7 @@ struct MediaRow: View {
                 HStack(alignment: .top, spacing: 0) {
                     ForEach(movies) { movies in
                         NavigationLink {
-                            MediaDetails(item: movies)
+                            MediaDetails(item: movies, item2: item2)
                         } label: {
                             MediaItem(movies: movies)                    }
                         
@@ -40,10 +42,10 @@ struct MediaRow: View {
             
         }
     }
-    
-    struct MediaRow_Previews: PreviewProvider {
-        static var previews: some View {
-            MediaRow(path: "upcoming")
-        }
-    }
 }
+//    struct MediaRow_Previews: PreviewProvider {
+//        static var previews: some View {
+//            MediaRow(path: "upcoming")
+//        }
+//    }
+//}

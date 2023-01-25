@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		130A6E58297E4A4300C3971C /* ActorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A6E57297E4A4300C3971C /* ActorDetails.swift */; };
+		135D4E68297F5D730062CBEB /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135D4E67297F5D730062CBEB /* Actor.swift */; };
 		13B7BC0F2977BD7200E5814F /* Media_PlanetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC0E2977BD7200E5814F /* Media_PlanetApp.swift */; };
 		13B7BC112977BD7200E5814F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC102977BD7200E5814F /* ContentView.swift */; };
 		13B7BC132977BD7300E5814F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B7BC122977BD7300E5814F /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		130A6E57297E4A4300C3971C /* ActorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorDetails.swift; sourceTree = "<group>"; };
+		135D4E67297F5D730062CBEB /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		13B7BC0B2977BD7200E5814F /* Media_Planet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media_Planet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B7BC0E2977BD7200E5814F /* Media_PlanetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media_PlanetApp.swift; sourceTree = "<group>"; };
 		13B7BC102977BD7200E5814F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				13B7BC2C2977C04700E5814F /* Logos.swift */,
 				13B7BC2A2977C02F00E5814F /* Backdrops.swift */,
 				13B7BC242977BF6400E5814F /* CastInfo.swift */,
+				135D4E67297F5D730062CBEB /* Actor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				13B7BC3C2977C6DF00E5814F /* MediaItem.swift in Sources */,
 				13B7BC2D2977C04700E5814F /* Logos.swift in Sources */,
 				13B7BC252977BF6400E5814F /* CastInfo.swift in Sources */,
+				135D4E68297F5D730062CBEB /* Actor.swift in Sources */,
 				13B7BC112977BD7200E5814F /* ContentView.swift in Sources */,
 				13B7BC0F2977BD7200E5814F /* Media_PlanetApp.swift in Sources */,
 				13B7BC2B2977C02F00E5814F /* Backdrops.swift in Sources */,

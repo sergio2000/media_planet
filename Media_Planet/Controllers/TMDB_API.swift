@@ -9,6 +9,7 @@ import Foundation
 
 //retrives first page of movies based on different endpoints
 class TMDB_API: ObservableObject {
+    
     func getMovies(endpoint: String, completion: @escaping ([Results]) -> ()) {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=be3c28f238dc17af4f5b058fd44ffae2&language=en-US&page=1")
                 
@@ -39,16 +40,16 @@ class TMDB_API: ObservableObject {
     }
     
     //retrives the different 
-    func getBackdrops(movie_id: String, completion: @escaping ([Cast]) -> ()) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/credits?api_key=be3c28f238dc17af4f5b058fd44ffae2&language=en-US")
+    func getBackdrops(movie_id: String, completion: @escaping ([Backdrops]) -> ()) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/images?api_key=be3c28f238dc17af4f5b058fd44ffae2")
         
         else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
-            let people = try! JSONDecoder().decode(People.self, from: data!)
+            let images = try! JSONDecoder().decode(Images.self, from: data!)
             
             
             DispatchQueue.main.async {
-                completion(people.cast)
+                completion(images.backdrops)
             }
             
         }
@@ -69,5 +70,23 @@ class TMDB_API: ObservableObject {
         }
         .resume()
     }
+    
+    func getActorInfo(actor_id: String, completion: @escaping (Actor) -> ()) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/person/\(actor_id)?api_key=be3c28f238dc17af4f5b058fd44ffae2&language=en-US")
+        
+        else { return }
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            let info = try! JSONDecoder().decode(Actor.self, from: data!)
+            
+            
+            DispatchQueue.main.async {
+                completion(info)
+                print(info)
+                print(url)
+            }
+        }
+        .resume()
+    }
+
 
 }

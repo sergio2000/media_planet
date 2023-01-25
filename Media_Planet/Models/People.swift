@@ -10,5 +10,8 @@ import Foundation
 struct People: Codable, Identifiable {
     let id: Int
     let cast: [Cast]
+   
+ 
 }
+
 

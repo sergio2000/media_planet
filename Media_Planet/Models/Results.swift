@@ -10,6 +10,7 @@ import Foundation
 struct Results: Codable, Identifiable{
     let id: Int
     let original_title: String
+    let title: String
     let popularity: Double
     let poster_path: String
     let backdrop_path: String?

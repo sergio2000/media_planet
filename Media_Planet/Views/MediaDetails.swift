@@ -10,12 +10,16 @@ import SwiftUI
 struct MediaDetails: View {
     var item: Results
     @State var pictures: [Logos] = []
+    @State var item2: [Backdrops]
+
+    
     var body: some View {
         ScrollView(.vertical) {
             
             ZStack(alignment: .topLeading) {
                 VStack {
-                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original/\(item.backdrop_path ?? "")")) { image in
+                    let back = "https://image.tmdb.org/t/p/original/\(item2.randomElement()?.file_path ?? "")"
+                    AsyncImage(url: URL(string: back)) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
@@ -26,7 +30,7 @@ struct MediaDetails: View {
                         ProgressView()
                     }
                     
-                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original/\(item.backdrop_path ?? "")")) { image in
+                    AsyncImage(url: URL(string: back)) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -55,28 +59,31 @@ struct MediaDetails: View {
 //
 //                    }
                     VStack(alignment: .leading) {
-                        Text(item.original_title)
+                        Text(item.title)
                             .font(.title)
                             .foregroundColor(.gray)
+                            .padding(.horizontal, 25)
                         Spacer()
                         Text("Description")
                             .font(.headline)
+                            .padding(.horizontal, 25)
                         Divider()
                         Text(item.overview)
                             .font(.subheadline)
-                    
+                            .padding(.horizontal, 25)
                         
                         
                    
                     CastView(id: String(item.id))
                         .frame(height: 240)
+                        .padding(.leading, 25)
                    Spacer(minLength: 200)
-                    }   .padding(.horizontal, 25)
+                    }
                 }
                 
                     .onAppear {
-                        TMDB_API().getLogos(movie_id: String(item.id)) { (logo) in
-                            self.pictures = logo
+                        TMDB_API().getBackdrops(movie_id: String(item.id)) { (logo) in
+                            self.item2 = logo
                         }
                     }  .offset(y:250)
                 
