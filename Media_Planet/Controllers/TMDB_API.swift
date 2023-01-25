@@ -9,9 +9,9 @@ import Foundation
 
 //retrives first page of movies based on different endpoints
 class TMDB_API: ObservableObject {
-    
+    let apiKey = "be3c28f238dc17af4f5b058fd44ffae2"
     func getMovies(endpoint: String, completion: @escaping ([Results]) -> ()) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=be3c28f238dc17af4f5b058fd44ffae2&language=en-US&page=1")
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)&language=en-US&page=1")
                 
         else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -25,7 +25,7 @@ class TMDB_API: ObservableObject {
         .resume()
     }
     func getCast(movie_id: String, completion: @escaping ([Cast]) -> ()) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/credits?api_key=be3c28f238dc17af4f5b058fd44ffae2&language=en-US")
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/credits?api_key=\(apiKey)&language=en-US")
         
         else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -41,7 +41,7 @@ class TMDB_API: ObservableObject {
     
     //retrives the different 
     func getBackdrops(movie_id: String, completion: @escaping ([Backdrops]) -> ()) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/images?api_key=be3c28f238dc17af4f5b058fd44ffae2")
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/images?api_key=\(apiKey)")
         
         else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -57,7 +57,7 @@ class TMDB_API: ObservableObject {
     }
     
     func getLogos(movie_id: String, completion: @escaping ([Logos]) -> ()) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/images?api_key=be3c28f238dc17af4f5b058fd44ffae2&include_image_language=en")
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/images?api_key=\(apiKey)&include_image_language=en")
         
         else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -72,7 +72,7 @@ class TMDB_API: ObservableObject {
     }
     
     func getActorInfo(actor_id: String, completion: @escaping (Actor) -> ()) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/person/\(actor_id)?api_key=be3c28f238dc17af4f5b058fd44ffae2&language=en-US")
+        guard let url = URL(string: "https://api.themoviedb.org/3/person/\(actor_id)?api_key=\(apiKey)&language=en-US")
         
         else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
