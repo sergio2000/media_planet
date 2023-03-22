@@ -6,21 +6,20 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct MediaItem: View {
     var movies: Results
     
     var body: some View {
         VStack(alignment: .leading) {
-            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original/\(movies.poster_path)")) { image in
-                image
+            KFImage(URL(string: "https://image.tmdb.org/t/p/original/\(movies.poster_path)"))
+                    .placeholder { Image("placeholder-image") }
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: 130, height: 200)
-            .cornerRadius(8)
+                    .frame(width: 130, height: 200)
+                    .cornerRadius(8)
+                    
+          
                 
             
             

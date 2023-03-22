@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		130A6E58297E4A4300C3971C /* ActorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A6E57297E4A4300C3971C /* ActorDetails.swift */; };
+		134B4C0329CA92E50089DF18 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 134B4C0229CA92E50089DF18 /* SDWebImage */; };
+		134B4C0529CA92E50089DF18 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 134B4C0429CA92E50089DF18 /* SDWebImageMapKit */; };
+		134B4C0829CA93500089DF18 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 134B4C0729CA93500089DF18 /* Kingfisher */; };
 		135D4E68297F5D730062CBEB /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135D4E67297F5D730062CBEB /* Actor.swift */; };
 		13B7BC0F2977BD7200E5814F /* Media_PlanetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC0E2977BD7200E5814F /* Media_PlanetApp.swift */; };
 		13B7BC112977BD7200E5814F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B7BC102977BD7200E5814F /* ContentView.swift */; };
@@ -56,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				134B4C0829CA93500089DF18 /* Kingfisher in Frameworks */,
+				134B4C0529CA92E50089DF18 /* SDWebImageMapKit in Frameworks */,
+				134B4C0329CA92E50089DF18 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +158,11 @@
 			dependencies = (
 			);
 			name = Media_Planet;
+			packageProductDependencies = (
+				134B4C0229CA92E50089DF18 /* SDWebImage */,
+				134B4C0429CA92E50089DF18 /* SDWebImageMapKit */,
+				134B4C0729CA93500089DF18 /* Kingfisher */,
+			);
 			productName = Media_Planet;
 			productReference = 13B7BC0B2977BD7200E5814F /* Media_Planet.app */;
 			productType = "com.apple.product-type.application";
@@ -180,6 +191,10 @@
 				Base,
 			);
 			mainGroup = 13B7BC022977BD7200E5814F;
+			packageReferences = (
+				134B4C0129CA92E50089DF18 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				134B4C0629CA93500089DF18 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 13B7BC0C2977BD7200E5814F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -423,6 +438,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		134B4C0129CA92E50089DF18 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		134B4C0629CA93500089DF18 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		134B4C0229CA92E50089DF18 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 134B4C0129CA92E50089DF18 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		134B4C0429CA92E50089DF18 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 134B4C0129CA92E50089DF18 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		134B4C0729CA93500089DF18 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 134B4C0629CA93500089DF18 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 13B7BC032977BD7200E5814F /* Project object */;
 }

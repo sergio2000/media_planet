@@ -21,6 +21,7 @@ class TMDB_API: ObservableObject {
             
             DispatchQueue.main.async {
                 completion(posts.results)
+                print(posts.results)
             }
         }
         .resume()
@@ -73,7 +74,7 @@ class TMDB_API: ObservableObject {
     }
     
     func getActorInfo(actor_id: String, completion: @escaping (Actor) -> ()) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/person/\(actor_id)?api_key=\(apiKey)&language=en-US")
+        guard let url = URL(string: "https://api.themoviedb.org/3/person/\(actor_id)?api_key=\(apiKey)&language=en-US&append_to_response=combined_credits")
         
         else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
