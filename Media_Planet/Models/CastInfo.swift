@@ -20,6 +20,4 @@ struct Cast: Codable, Identifiable {
     let character: String
     let credit_id: String
     let order : Int
-    
-    
 }

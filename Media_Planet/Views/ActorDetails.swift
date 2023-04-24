@@ -18,9 +18,13 @@ struct ActorDetails: View {
             HStack(alignment: .top) {
                 KFImage(URL(string: "https://image.tmdb.org/t/p/original/\(person.profile_path ?? "")"))
                     .resizable()
-                    .scaledToFit()
-                    .frame(maxHeight: 200)
-                    .padding(10)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 120, height: 120)
+                    .clipShape(Circle())
+                    .overlay(
+                            Circle()
+                                .stroke(Color.black, lineWidth: 2)
+                        )
                 VStack(alignment: .leading) {
                     Text(person.name)
                         .font(.headline)
@@ -38,7 +42,8 @@ struct ActorDetails: View {
                             .foregroundColor(.red)
                     }
                 }
-            }
+            }.padding(.horizontal, 25)
+                .padding(.vertical, 10)
             
             Picker(selection: $selectedOption, label: Text("Information")) {
                 Text("Biography").tag(0)
@@ -58,21 +63,29 @@ struct ActorDetails: View {
                     .padding(.horizontal, 25)
             case 2:
                 ScrollView(.vertical) {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 4) {
                         ForEach(person.combined_credits?.cast ?? []) { (person: Credit) in
-                            KFImage(URL(string: "https://image.tmdb.org/t/p/original/\(person.poster_path ?? "")"))
+                            
+                                KFImage(URL(string: "https://image.tmdb.org/t/p/original/\(person.poster_path ?? "")"))
                                 
-                                .placeholder { ProgressView()
-                                    .progressViewStyle(CircularProgressViewStyle(tint: Color(.black))) }
-                                
+                                    .placeholder {
+                                        ZStack {
+                                            Color.gray
+                                            
+                                                .frame(width: UIScreen.main.bounds.width / 3 - 20, height: UIScreen.main.bounds.width / 2 - 20)
+                                                .cornerRadius(8)
+                                            Text(person.original_title ?? "")
+                                                .multilineTextAlignment(.center)
+                                                .padding(8)
+                                        }
+                                    }
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(maxHeight: 200)
-                                    .padding(.leading, 25)
-                            
-                           
-                        }
-                    }.padding(.trailing, 10)
+                                    .cornerRadius(8)
+                            }
+                        
+                    }.padding()
                 }
 
             default:

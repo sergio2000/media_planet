@@ -12,7 +12,8 @@ import Combine
 struct MediaDetails: View {
     var item: Results
     @State var pictures: [Logos] = []
-    @State var item2: [Backdrops]
+    @State var backdrops: [Backdrops]
+
     
     let reloadSubject = PassthroughSubject<Void, Never>() // create a subject to emit reload events
     
@@ -21,7 +22,7 @@ struct MediaDetails: View {
             
             ZStack(alignment: .topLeading) {
                 VStack {
-                    let back = "https://image.tmdb.org/t/p/original/\(item2.randomElement()?.file_path ?? "")"
+                    let back = "https://image.tmdb.org/t/p/original/\(backdrops.first?.file_path ?? "")"
 
                     KFImage(URL(string: back))
                             .resizable()
@@ -70,7 +71,6 @@ struct MediaDetails: View {
                             .font(.subheadline)
                             .padding(.horizontal, 25)
                         
-                        
                    
                     CastView(id: String(item.id))
                         .frame(height: 240)
@@ -79,11 +79,7 @@ struct MediaDetails: View {
                     }
                 }
                 
-                .onReceive(reloadSubject) { _ in // use the onReceive modifier to reload the data when the subject emits a new value
-                    TMDB_API().getBackdrops(movie_id: String(item.id)) { (logo) in
-                        self.item2 = logo
-                    }
-                }  .offset(y:250)
+                 .offset(y:250)
                 
                 
             }.accentColor(.accentColor)
@@ -92,13 +88,14 @@ struct MediaDetails: View {
         }
         .onAppear { // use the onAppear modifier to reload the data when the view appears for the first time
             TMDB_API().getBackdrops(movie_id: String(item.id)) { (logo) in
-                self.item2 = logo
+                self.backdrops = logo
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
             reloadSubject.send() // emit a reload event whenever the app enters foreground
         }
     }
+    
 }
 
 //struct MediaDetails_Previews: PreviewProvider {

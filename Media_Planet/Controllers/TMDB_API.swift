@@ -21,11 +21,12 @@ class TMDB_API: ObservableObject {
             
             DispatchQueue.main.async {
                 completion(posts.results)
-                print(posts.results)
             }
         }
         .resume()
     }
+ 
+
     func getCast(movie_id: String, completion: @escaping ([Cast]) -> ()) {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/credits?api_key=\(apiKey)&language=en-US")
         
@@ -43,7 +44,7 @@ class TMDB_API: ObservableObject {
     
     //retrives the different 
     func getBackdrops(movie_id: String, completion: @escaping ([Backdrops]) -> ()) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/images?api_key=\(apiKey)")
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movie_id)/images?api_key=\(apiKey)&language=en-US&include_image_language=en")
         
         else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in

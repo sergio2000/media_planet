@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CastView: View {
     @State var people: [Cast] = []
@@ -35,21 +36,21 @@ struct CastView: View {
                                 .lineLimit(1)
                                 .truncationMode(.tail)
                             
+                            KFImage(URL(string: "https://image.tmdb.org/t/p/original\(cast.profile_path ?? "")"))
+                                .placeholder {
+                                    Image("no_profile")
+                                        .resizable()
                             
-                            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/original\(cast.profile_path ?? "")")) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                            } placeholder: {
-                                ProgressView()
-                                
-                            }
+                                } .onFailureImage(KFCrossPlatformImage(systemName: "globe.fill"))
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                    
                             .frame(width: 120, height: 180)
                             
                             .cornerRadius(8)
                             
                         }
-                        .foregroundColor(.black)
+                        .foregroundColor(.secondary)
                         .padding(2)
                         .cornerRadius(8)
                     }

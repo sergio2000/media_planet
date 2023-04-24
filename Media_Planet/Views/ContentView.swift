@@ -9,18 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var paths = ["Top_Rated", "Upcoming", "Popular", "Now_Playing"]
     
     var body: some View {
-        NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 20) {
-                    ForEach(paths, id: \.self){ path in
-                        MediaRow(path: path)
-                    }
+        TabView {
+            MovieView()
+                .tabItem {
+                    Label("Movies", systemImage: "film")
                 }
-            }
-        }.navigationTitle("Movies")
+            TVView()
+                .tabItem {
+                    Label("TV Shows", systemImage: "sparkles.tv")
+                }
+            SearchView()
+                .badge("!")
+                .tabItem {
+                    Label("Account", systemImage: "magnifyingglass")
+                }
+        }
+            
+
     }
 }
 
